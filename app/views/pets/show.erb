@@ -1,3 +1,13 @@
 <h2>Pet name: </h2>
 <h3><%= @pet.name %></h3>
 
+<h4>Owner:</h4>
+
+<% if @pet.owner %>
+  <h5> <%=@pet.owner.name %> </h5> 
+  <% else %>
+   <h4>This pet does not currently have an owner.</h4> 
+<% end %>
+ 
+  
+  <a href="/pets/<%= @pet.id %>/edit">Edit Pet</a>
