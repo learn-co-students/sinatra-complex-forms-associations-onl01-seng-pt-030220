@@ -1,4 +1,3 @@
-# edit.erb
 <h1>Update Owner</h1>
 
 <h2>Edits for <%= @owner.name %></h2>
@@ -16,9 +15,10 @@
     <h3>Existing Pets</h3>
     <% @pets.each do |pet| %>
       <input type="checkbox" name="owner[pet_ids][]" id="<%= pet.id %>" value="<%= pet.id %>"
-      <%='checked' if @owner.pets.include?(pet) %>> <%= pet.name %></input><br>
+      <%='checked' if @owner.pets.include?(pet) %>> <%= pet.name %></input>
     <%end%>
     <br>
+
 
     <h3>New Pet</h3>
     <label>Pet Name: </label>
