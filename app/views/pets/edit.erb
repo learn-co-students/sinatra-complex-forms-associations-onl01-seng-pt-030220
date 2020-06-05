@@ -4,9 +4,7 @@
  
   <form action="/pets/<%= @pet.id %>" method="POST">
     <input id="hidden" type="hidden" name="_method" value="patch">
-    <label for="pet_name">Edit the Pets Name:</label>
-    <br>
-    <input type="text" name="pet[name]" id="pet_name" value="<%= @pet.name %>">
+    Edit the Pets Name:<input type="text" name="pet[name]" id="pet_name" value="<%= @pet.name %>">
  
     <br>
     <p>Select an existing owner or create a new one below.</p>
@@ -19,9 +17,7 @@
     <br>
  
     <h3>New Owner</h3>
-    <label>Owner Name: </label>
-    <br>
-    <input type="text" name="owner[name]" id="owner_name"></input>
+    Owner Name:<input type="text" name="owner[name]" id="owner_name"></input>
     <br><br>
  
     <input type="submit" value="Update Pet">

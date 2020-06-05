@@ -1,11 +1,4 @@
 <ul><% @owners.each do |owner| %>
     <a href="/owners/<%= owner.id %>"><li><%= owner.name %></li></a>
-    <% if owner.pets.length != 0 %>
-      <% owner.pets.each do |pet| %>
-        <%= pet.name %>
-      <% end %>
-      <% else %>
-        Does not currently own any pets
-      <% end %>
   <% end %>
-  </ul>
+</ul>

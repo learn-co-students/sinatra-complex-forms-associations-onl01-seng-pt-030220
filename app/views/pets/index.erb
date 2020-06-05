@@ -1,9 +1,5 @@
 <ul><% @pets.each do |pet| %>
   <a href="/pets/<%= pet.id %>"><li><%= pet.name %></li></a>
-    <% if pet.owner %>
-      <%= pet.owner.name %>
-    <% else %>
-      Currently has no owner
-      <% end %>
 <% end %>
 </ul>
+Owner: <%= @pet.owner.name %>
