@@ -1,1 +1,8 @@
-index.erb
+
+<% @pets.each do |pet| %>
+    <%= pet.name %>
+    <% if pet.owner != nil %>
+        <%= pet.owner.name %>
+    <% end %>
+    <br>
+<% end %>
