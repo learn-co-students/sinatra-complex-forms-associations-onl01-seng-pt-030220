@@ -10,6 +10,12 @@ class PetsController < ApplicationController
     erb :'/pets/new'
   end
 
+  get '/pets/:id/edit' do 
+    @pet = Pet.find(params[:id])
+    @owners = Owner.all
+    erb :'/pets/edit'
+  end
+
   post '/pets' do 
     #binding.pry
     @pet = Pet.create(params[:pet])
@@ -18,6 +24,7 @@ class PetsController < ApplicationController
       @pet.owner = Owner.create(name: params["owner"]["name"])
     
     end
+    @pet.save
     redirect "pets/#{@pet.id}"
   end
 
@@ -26,8 +33,16 @@ class PetsController < ApplicationController
     erb :'/pets/show'
   end
 
+  
   patch '/pets/:id' do 
+   
+    @pet = Pet.find(params[:id])
+    @pet.update(params["pet"])
+    if !params["owner"]["name"].empty?
+     @pet.owner = Owner.create(name: params["owner"]["name"])
+    end
+    @pet.save
+    redirect "pets/#{@pet.id}"
+   end
 
-    redirect to "pets/#{@pet.id}"
-  end
 end
