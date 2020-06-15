@@ -1,1 +1,7 @@
 show.erb
+
+<ul>
+<%= Pet.all.each do |p| %>
+  <li><%= pet.name %></li>
+<% end %>
+</ul>
