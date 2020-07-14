@@ -10,7 +10,7 @@ class PetsController < ApplicationController
   end
 
   post '/pets' do 
-
+    Pet.all
     redirect to "pets/#{@pet.id}"
   end
 
