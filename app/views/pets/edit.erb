@@ -15,11 +15,9 @@ Owner:
     name="pet[owner_id]" 
     id="<%= owner.id %>" 
     value="<%= owner.id %>"
-    <%= 'checked' if @pet.owner_id == owner.id %>>
+    <%= 'checked' if @pet.owner == owner %>>
     <%= owner.name %>
     </input>
-    THIS US NOT SAVING THE NEW OWNER NOR SAVING UPDATED PET NAME NOR TICKING radio
-    NOR LISTING ALL THE ACTUAL OWNERS - mine was missing
 
 <%end%>
 
